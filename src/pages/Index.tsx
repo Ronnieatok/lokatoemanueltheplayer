@@ -3,6 +3,7 @@ import StatsSection from "@/components/StatsSection";
 import AboutSection from "@/components/AboutSection";
 import ActionSection from "@/components/ActionSection";
 import CareerTimeline from "@/components/CareerTimeline";
+import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
