@@ -1,22 +1,33 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import heroImage from "@/assets/hero-player.jpg";
 
 const HeroSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
+    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image with parallax */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: imgY }}>
         <img
           src={heroImage}
           alt="Emanuel Ebei on the pitch"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-[120%] object-cover object-top"
         />
         <div className="hero-gradient-overlay absolute inset-0" />
         <div className="absolute inset-0 bg-background/40" />
-      </div>
+      </motion.div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      {/* Content with parallax */}
+      <motion.div className="relative z-10 text-center px-4" style={{ y: textY, opacity }}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +66,7 @@ const HeroSection = () => {
           A commanding presence in the heart of the midfield,
           dictating tempo and anchoring the defense.
         </motion.p>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
@@ -63,6 +74,7 @@ const HeroSection = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        style={{ opacity }}
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

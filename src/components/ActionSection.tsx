@@ -1,24 +1,33 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import actionImage from "@/assets/action-shot.jpg";
 
 const ActionSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const imgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const textScale = useTransform(scrollYProgress, [0.2, 0.5], [0.9, 1]);
+  const textOpacity = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
+
   return (
-    <section className="relative overflow-hidden">
-      <div className="relative h-[70vh] md:h-[80vh]">
-        <img
+    <section ref={ref} className="relative overflow-hidden">
+      <div className="relative h-[70vh] md:h-[80vh] overflow-hidden">
+        <motion.img
           src={actionImage}
           alt="Emanuel Ebei in action"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover absolute inset-0"
+          style={{ y: imgY }}
         />
         <div className="absolute inset-0 bg-background/60" />
         <div className="hero-gradient-overlay absolute inset-0" />
 
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            style={{ scale: textScale, opacity: textOpacity }}
             className="text-center px-4"
           >
             <p className="spaced-letters text-primary mb-6">The Anchor</p>
