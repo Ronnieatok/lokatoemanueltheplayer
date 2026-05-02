@@ -30,7 +30,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         transition={{ delay: 0.1 }}
         className="spaced-letters text-muted-foreground mb-8 text-xs"
       >
-        No. 9 · Buruburu Sports
+        No. 18 · Buruburu Sports
       </motion.p>
 
       <motion.h1
