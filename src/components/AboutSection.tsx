@@ -36,7 +36,7 @@ const AboutSection = () => {
           <div className="accent-line mb-8" />
           <p className="text-body text-muted-foreground leading-relaxed mb-6">
             Emanuel Ebei is the heartbeat of Buruburu Sports. As the team's
-            central defensive midfielder wearing the iconic No. 9, he combines
+            central defensive midfielder wearing the iconic No. 18, he combines
             tactical intelligence with physical dominance to control the
             midfield battle.
           </p>
