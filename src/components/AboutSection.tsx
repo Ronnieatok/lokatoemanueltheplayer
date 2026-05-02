@@ -11,13 +11,13 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="relative">
+          <div className="relative max-w-sm md:max-w-none mx-auto md:mx-0">
             <img
               src={portraitImage}
               alt="Emanuel Ebei portrait"
               className="w-full aspect-[3/4] object-cover"
             />
-            <div className="absolute -bottom-4 -right-4 w-full h-full border border-primary/20 -z-10" />
+            <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-full h-full border border-primary/20 -z-10" />
           </div>
         </motion.div>
 
@@ -28,7 +28,7 @@ const AboutSection = () => {
           transition={{ duration: 0.7 }}
         >
           <p className="spaced-letters text-primary mb-4">About</p>
-          <h2 className="text-display text-5xl md:text-7xl text-foreground mb-8">
+          <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-foreground mb-8">
             On and off
             <br />
             the field

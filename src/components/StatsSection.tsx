@@ -19,7 +19,7 @@ const StatsSection = () => {
           className="mb-16"
         >
           <p className="spaced-letters text-primary mb-4">Statistics</p>
-          <h2 className="text-display text-5xl md:text-7xl text-foreground">
+          <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-foreground">
             Master of
             <br />
             his craft
@@ -34,9 +34,9 @@ const StatsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="stat-card"
+              className="stat-card p-4 sm:p-6"
             >
-              <span className="text-display text-5xl md:text-6xl text-primary">
+              <span className="text-display text-4xl sm:text-5xl md:text-6xl text-primary">
                 {stat.value}
               </span>
               <p className="text-body text-muted-foreground text-sm mt-3 tracking-wide">

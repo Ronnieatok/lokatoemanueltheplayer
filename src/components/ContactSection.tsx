@@ -31,7 +31,7 @@ const ContactSection = () => {
           className="mb-12"
         >
           <p className="spaced-letters text-primary mb-4">Get in Touch</p>
-          <h2 className="text-display text-5xl md:text-7xl text-foreground">
+          <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-foreground">
             Contact
           </h2>
           <p className="text-body text-muted-foreground mt-4 text-sm leading-relaxed">

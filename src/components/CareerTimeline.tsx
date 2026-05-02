@@ -22,7 +22,7 @@ const CareerTimeline = () => {
           className="mb-16"
         >
           <p className="spaced-letters text-primary mb-4">Journey</p>
-          <h2 className="text-display text-5xl md:text-7xl text-foreground">
+          <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-foreground">
             The road
             <br />
             so far
