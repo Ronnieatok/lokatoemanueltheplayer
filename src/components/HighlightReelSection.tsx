@@ -53,7 +53,7 @@ const HighlightReelSection = () => {
         >
           <p className="spaced-letters text-primary mb-4">Highlight Reel</p>
           <h2 className="text-display text-5xl md:text-7xl text-foreground">
-            On The Ball
+            On The Pitch
           </h2>
         </motion.div>
 
