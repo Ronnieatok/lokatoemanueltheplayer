@@ -81,7 +81,7 @@
   }
 
   .stat-card {
-    @apply bg-card border border-border p-6 relative overflow-hidden;
+    @apply bg-card border border-border p-4 sm:p-6 relative overflow-hidden;
   }
 
   .stat-card::before {
@@ -91,7 +91,7 @@
   }
 
   .section-spacer {
-    @apply py-24 md:py-32;
+    @apply py-16 sm:py-24 md:py-32;
   }
 
   .spaced-letters {

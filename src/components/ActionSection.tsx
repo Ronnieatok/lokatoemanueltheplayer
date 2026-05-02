@@ -31,7 +31,7 @@ const ActionSection = () => {
             className="text-center px-4"
           >
             <p className="spaced-letters text-primary mb-6">The Anchor</p>
-            <h2 className="text-display text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9]">
+            <h2 className="text-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground leading-[0.9]">
               Dictating
               <br />
               the tempo

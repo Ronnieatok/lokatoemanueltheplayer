@@ -34,14 +34,14 @@ const HeroSection = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="spaced-letters text-muted-foreground mb-6"
         >
-          Buruburu Sports · No. 9 · Central Defensive Midfielder
+          Buruburu Sports · No. 9 · CDM
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-display text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-[0.85] text-foreground"
+          className="text-display text-6xl xs:text-7xl sm:text-8xl md:text-[10rem] lg:text-[12rem] leading-[0.85] text-foreground"
         >
           Emanuel
           <br />
