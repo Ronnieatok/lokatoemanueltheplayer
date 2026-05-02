@@ -6,7 +6,7 @@ const FooterSection = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <span className="text-display text-2xl text-foreground">Emanuel Ebei</span>
-          <span className="text-muted-foreground text-sm ml-3">· No. 9</span>
+          <span className="text-muted-foreground text-sm ml-3">· No. 18</span>
         </div>
 
         <div className="flex items-center gap-5">
