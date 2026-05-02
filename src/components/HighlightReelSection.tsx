@@ -42,7 +42,7 @@ const HighlightReelSection = () => {
   };
 
   return (
-    <section className="section-spacer px-4 border-t border-border">
+    <section className="section-spacer px-4 sm:px-6 border-t border-border">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const HighlightReelSection = () => {
           className="mb-12"
         >
           <p className="spaced-letters text-primary mb-4">Highlight Reel</p>
-          <h2 className="text-display text-5xl md:text-7xl text-foreground">
+          <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-foreground">
             On The Pitch
           </h2>
         </motion.div>
@@ -83,17 +83,17 @@ const HighlightReelSection = () => {
             }`}
           >
             <span className="absolute inset-0 bg-background/30" />
-            <span className="relative flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-110">
-              {playing ? <Pause size={32} /> : <Play size={32} className="ml-1" />}
+            <span className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-110">
+              {playing ? <Pause className="w-6 h-6 sm:w-8 sm:h-8" /> : <Play className="w-6 h-6 sm:w-8 sm:h-8 ml-1" />}
             </span>
           </button>
         </motion.div>
 
-        <div className="mt-10">
+        <div className="mt-8 sm:mt-10">
           <p className="spaced-letters text-muted-foreground mb-4 text-xs">
             Jump to a moment
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
             {clips.map((clip, i) => (
               <motion.button
                 key={i}
@@ -116,15 +116,16 @@ const HighlightReelSection = () => {
                   loading="lazy"
                 />
                 <span className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                <span className="absolute top-2 left-2 flex items-center justify-center w-8 h-8 rounded-full bg-primary/90 text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Play size={14} className="ml-0.5" />
+                <span className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/90 text-primary-foreground opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Play size={12} className="ml-0.5 sm:hidden" />
+                  <Play size={14} className="ml-0.5 hidden sm:block" />
                 </span>
-                <span className="absolute bottom-2 left-3 right-3 flex items-end justify-between gap-2">
-                  <span className="text-foreground text-sm font-medium leading-tight">
-                    {clip.title}
-                  </span>
-                  <span className="spaced-letters text-primary text-[10px] shrink-0">
+                <span className="absolute bottom-1.5 left-2 right-2 sm:bottom-2 sm:left-3 sm:right-3 flex flex-col gap-0.5">
+                  <span className="spaced-letters text-primary text-[10px]">
                     {clip.label}
+                  </span>
+                  <span className="text-foreground text-xs sm:text-sm font-medium leading-tight line-clamp-1">
+                    {clip.title}
                   </span>
                 </span>
               </motion.button>
